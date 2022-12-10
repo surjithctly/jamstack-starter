@@ -20,7 +20,7 @@ export default function PostPage(props: {
     <Container>
       <article>
         <h1 className="text-3xl font-bold ">{post.title}</h1>
-        <div className="hidden md:mb-12 md:block">
+        <div className="">
           {post.author && <div>{post.author.name}</div>}
         </div>
         <div className="mb-8 sm:mx-0 md:mb-16">
