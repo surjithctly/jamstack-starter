@@ -1,5 +1,5 @@
 import cx from "classnames";
-import { urlForImage } from "../../sanity/lib/image";
+import { urlForImage } from "@/lib/sanity/image";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,6 +12,9 @@ interface CoverImageProps {
 
 export default function CoverImage(props: CoverImageProps) {
   const { title, slug, image: source, priority } = props;
+  console.log(
+    source && urlForImage(source).height(1000).width(2000).url()
+  );
   const image = source?.asset?._ref ? (
     <div
       className={cx(
@@ -19,12 +22,11 @@ export default function CoverImage(props: CoverImageProps) {
         slug && "transition-shadow duration-200 hover:shadow-medium"
       )}>
       <Image
-        className="h-auto w-full"
         width={2000}
         height={1000}
         alt={`Cover Image for ${title}`}
         src={urlForImage(source).height(1000).width(2000).url()}
-        sizes="100vw"
+        sizes="(max-width 768px) 80vw, 50vw"
         priority={priority}
       />
     </div>
@@ -35,7 +37,7 @@ export default function CoverImage(props: CoverImageProps) {
   return (
     <div className="sm:mx-0">
       {slug ? (
-        <Link href={`/posts/${slug}`} aria-label={title}>
+        <Link href={`/blog/${slug}`} aria-label={title}>
           {image}
         </Link>
       ) : (

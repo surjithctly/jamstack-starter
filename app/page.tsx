@@ -1,7 +1,7 @@
-import IndexPage from "../components/pages/index";
+import IndexPage from "@/components/pages/index";
 // import PreviewIndexPage from 'components/PreviewIndexPage'
 // import { PreviewSuspense } from 'components/PreviewSuspense'
-import { getAllPosts } from "../sanity/lib/client";
+import { getAllPosts } from "@/lib/sanity/client";
 // import { previewData } from 'next/headers'
 
 export default async function IndexRoute() {
@@ -16,7 +16,7 @@ export default async function IndexRoute() {
 
   const posts = await getAllPosts();
 
-  console.log("from app/page", posts);
+  //console.log("from app/page", posts);
 
   //   if (previewData()) {
   //     const token = previewData().token || null

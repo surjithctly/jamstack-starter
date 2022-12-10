@@ -1,7 +1,7 @@
 // import Avatar from "components/AuthorAvatar";
 import CoverImage from "./coverimage";
 // import Date from "components/PostDate";
-import type { Post } from "../../sanity/lib/groq";
+import type { Post } from "@/lib/sanity/groq";
 import Link from "next/link";
 
 export default function PostList({
@@ -12,7 +12,7 @@ export default function PostList({
   author,
   slug,
 }: Omit<Post, "_id">) {
-  console.log("heeee", mainImage);
+  //console.log("heeee", mainImage);
 
   return (
     <div>
@@ -24,8 +24,8 @@ export default function PostList({
           priority={false}
         />
       </div>
-      <h3 className="mb-3 text-3xl leading-snug">
-        <Link href={`/posts/${slug}`} className="hover:underline">
+      <h3 className="mb-3 text-3xl font-bold leading-snug">
+        <Link href={`/blog/${slug}`} className="hover:underline">
           {title}
         </Link>
       </h3>
