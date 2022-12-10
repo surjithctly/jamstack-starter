@@ -12,9 +12,9 @@ interface CoverImageProps {
 
 export default function CoverImage(props: CoverImageProps) {
   const { title, slug, image: source, priority } = props;
-  console.log(
-    source && urlForImage(source).height(1000).width(2000).url()
-  );
+  // console.log(
+  //   source && urlForImage(source).height(1000).width(2000).url()
+  // );
   const image = source?.asset?._ref ? (
     <div
       className={cx(
