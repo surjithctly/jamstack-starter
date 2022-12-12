@@ -15,4 +15,4 @@ export default async function SlugRoute({
 }
 
 // FIXME: remove the `revalidate` export below once you've followed the instructions in `/pages/api/revalidate.ts`
-export const revalidate = 1;
+// export const revalidate = 1;
