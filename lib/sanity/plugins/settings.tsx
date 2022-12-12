@@ -2,14 +2,14 @@
  * This plugin contains all the logic for setting up the singletons
  */
 
-import {
-  apiVersion,
-  previewSecretId,
-} from "../../../sanity/lib/config";
+// import {
+//   apiVersion,
+//   previewSecretId,
+// } from "@/lib/sanity/config";
 import { type DocumentDefinition } from "sanity";
 import { type StructureResolver } from "sanity/desk";
 
-import { PREVIEWABLE_DOCUMENT_TYPES } from "../sanity.config";
+// import { PREVIEWABLE_DOCUMENT_TYPES } from "../sanity.config";
 // import { PreviewPane } from "./previewPane/PreviewPane";
 
 export const singletonPlugin = (types: string[]) => {

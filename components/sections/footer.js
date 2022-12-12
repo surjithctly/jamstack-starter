@@ -9,7 +9,7 @@ export default function Footer() {
           href="https://twitter.com/surjithctly"
           target="_blank"
           className="underline hover:text-black"
-          rel="noopener">
+          rel="noreferrer noopener">
           Surjith S M
         </a>
       </div>

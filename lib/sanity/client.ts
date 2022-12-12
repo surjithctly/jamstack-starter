@@ -25,7 +25,11 @@ const client = projectId
 //     return {}
 // }
 
+
+
 export async function getAllPosts(): Promise<Post[]> {
+
+    console.log("refetching data..", Date.now(), useCdn, "log fetch", await client.fetch(postquery));
 
     if (client) {
         return (await client.fetch(postquery)) || []
