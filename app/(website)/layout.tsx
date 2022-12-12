@@ -8,15 +8,12 @@ export default function SiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head />
-      <body>
-        <Navbar />
-        <main>
-          <div className="container mx-auto">{children}</div>
-        </main>
-        <Footer />
-      </body>
-    </html>
+    <>
+      <Navbar />
+      <main>
+        <div className="container mx-auto">{children}</div>
+      </main>
+      <Footer />
+    </>
   );
 }
