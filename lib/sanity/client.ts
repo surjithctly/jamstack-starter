@@ -6,7 +6,7 @@ import {
 import { createClient } from 'next-sanity'
 
 if (!projectId) {
-    throw Error(
+    console.error(
         "The Sanity Project ID is not set. Check your environment variables."
     );
 }
