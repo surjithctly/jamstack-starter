@@ -36,6 +36,8 @@ export default async function revalidate(
             req,
             process.env.SANITY_REVALIDATE_SECRET
         )
+        console.log("Received body", body);
+
         if (isValidSignature === false) {
             const message = 'Invalid signature'
             console.log(message)
@@ -76,16 +78,16 @@ async function queryStaleRoutes(
                 staleRoutes.push(`/blog/${(body.slug as any).current}`)
             }
             // Assume that the post document was deleted. Query the datetime used to sort "More stories" to determine if the post was in the list.
-            const moreStories = await client.fetch(
-                groq`count(
-           *[_type == "post"] | order(date desc, _updatedAt desc) [0...3] [dateTime(date) > dateTime($date)]
-         )`,
-                { date: body.date }
-            )
-            // If there's less than 3 posts with a newer date, we need to revalidate everything
-            if (moreStories < 3) {
-                return [...new Set([...(await queryAllRoutes(client)), ...staleRoutes])]
-            }
+            //     const moreStories = await client.fetch(
+            //         groq`count(
+            //    *[_type == "post"] | order(date desc, _updatedAt desc) [0...3] [dateTime(date) > dateTime($date)]
+            //  )`,
+            //         { date: body.date }
+            //     )
+            //     // If there's less than 3 posts with a newer date, we need to revalidate everything
+            //     if (moreStories < 3) {
+            //         return [...new Set([...(await queryAllRoutes(client)), ...staleRoutes])]
+            //     }
             return staleRoutes
         }
     }

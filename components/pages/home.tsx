@@ -2,7 +2,7 @@ import PostList from "../parts/postlist";
 import type { Post } from "@/lib/sanity/groq";
 import Container from "@/components/parts/container";
 
-export default function IndexPage({ posts }: { posts: Post[] }) {
+export default function HomePage({ posts }: { posts: Post[] }) {
   // console.log(posts);
   return (
     <Container>

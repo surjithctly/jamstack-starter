@@ -1,4 +1,4 @@
-import IndexPage from "@/components/pages/index";
+import HomePage from "@/components/pages/home";
 // import PreviewIndexPage from 'components/PreviewIndexPage'
 // import { PreviewSuspense } from 'components/PreviewSuspense'
 import { getAllPosts } from "@/lib/sanity/client";
@@ -33,7 +33,7 @@ export default async function IndexRoute() {
   //   }
 
   //   return <IndexPage posts={posts} settings={settings} />;
-  return <IndexPage posts={posts} />;
+  return <HomePage posts={posts} />;
 }
 
 // FIXME: remove the `revalidate` export below once you've followed the instructions in `/pages/api/revalidate.ts`
