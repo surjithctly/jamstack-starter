@@ -27,10 +27,13 @@ import { type ParseBody, parseBody } from "next-sanity/webhook";
 
 export { config } from "next-sanity/webhook";
 
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
 export default async function revalidate(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  await delay(5000);
   try {
     const { body, isValidSignature } = await parseBody(
       req,
@@ -49,14 +52,12 @@ export default async function revalidate(
       return res.status(400).send(invalidId);
     }
 
-    setTimeout(async () => {
-      const staleRoutes = await queryStaleRoutes(body as any);
-      await Promise.all(staleRoutes.map((route) => res.revalidate(route)));
+    const staleRoutes = await queryStaleRoutes(body as any);
+    await Promise.all(staleRoutes.map((route) => res.revalidate(route)));
 
-      const updatedRoutes = `Updated routes: ${staleRoutes.join(", ")}`;
-      console.log(updatedRoutes);
-      return res.status(200).send(updatedRoutes);
-    }, 1000);
+    const updatedRoutes = `Updated routes: ${staleRoutes.join(", ")}`;
+    console.log(updatedRoutes);
+    return res.status(200).send(updatedRoutes);
   } catch (err) {
     console.error(err);
     return res.status(500).send(err.message);
