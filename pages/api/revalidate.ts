@@ -27,23 +27,10 @@ import { type ParseBody, parseBody } from "next-sanity/webhook";
 
 export { config } from "next-sanity/webhook";
 
-// const delay = (ms) => new Promise((res) => setTimeout(res, ms));
-
 export default async function revalidate(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // await delay(5000);
-  // // try hardcoded
-  // try {
-  //   await res.revalidate("/");
-  //   await res.revalidate("/blog/first-post");
-  //   return res.json({ revalidated: true });
-  // } catch (err) {
-  //   return res.status(500).send("Error revalidating");
-  // }
-  // return;
-
   try {
     const { body, isValidSignature } = await parseBody(
       req,

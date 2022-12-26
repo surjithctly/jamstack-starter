@@ -1,22 +1,19 @@
-import { apiVersion, dataset, projectId, useCdn } from './config'
-import {
-    type Post,
-    postquery, singlePost, postpaths
-} from './groq'
-import { createClient } from 'next-sanity'
+import { apiVersion, dataset, projectId, useCdn } from "./config";
+import { type Post, postquery, singlePost, postpaths } from "./groq";
+import { createClient } from "next-sanity";
 
 if (!projectId) {
-    console.error(
-        "The Sanity Project ID is not set. Check your environment variables."
-    );
+  console.error(
+    "The Sanity Project ID is not set. Check your environment variables."
+  );
 }
 
 /**
  * Checks if it's safe to create a client instance, as `@sanity/client` will throw an error if `projectId` is false
  */
 const client = projectId
-    ? createClient({ projectId, dataset, apiVersion, useCdn })
-    : null
+  ? createClient({ projectId, dataset, apiVersion, useCdn })
+  : null;
 
 // export async function getSettings(): Promise<Settings> {
 //     if (client) {
@@ -25,33 +22,34 @@ const client = projectId
 //     return {}
 // }
 
-
-
 export async function getAllPosts(): Promise<Post[]> {
+  console.log(
+    "refetching data..",
+    Date.now(),
+    useCdn,
+    "log fetch",
+    await client.fetch(postquery)
+  );
 
-    console.log("refetching data..", Date.now(), useCdn, "log fetch", await client.fetch(postquery));
-
-    if (client) {
-        return (await client.fetch(postquery)) || []
-    }
-    return []
+  if (client) {
+    return (await client.fetch(postquery)) || [];
+  }
+  return [];
 }
-
 
 export async function getPostBySlug(slug: string): Promise<Post> {
-    if (client) {
-        return (await client.fetch(singlePost, { slug })) || ({} as any)
-    }
-    return {} as any
+  if (client) {
+    return (await client.fetch(singlePost, { slug })) || ({} as any);
+  }
+  return {} as any;
 }
 
-
-export async function getAllPostsSlugs(): Promise<Pick<Post, 'slug'>[]> {
-    if (client) {
-        const slugs = (await client.fetch<string[]>(postpaths)) || []
-        return slugs.map((slug) => ({ slug }))
-    }
-    return []
+export async function getAllPostsSlugs(): Promise<Pick<Post, "slug">[]> {
+  if (client) {
+    const slugs = (await client.fetch<string[]>(postpaths)) || [];
+    return slugs.map((slug) => ({ slug }));
+  }
+  return [];
 }
 
 // export async function getPostAndMoreStories(
