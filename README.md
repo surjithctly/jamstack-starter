@@ -1,34 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# JAMStack Starter Template - Next.js & Sanity CMS
 
-## Getting Started
+JAMStack Starter is a starter template built with Next.js, Tailwind CSS & Sanity CMS by [Web3Templates](https://web3templates.com/).
 
-First, run the development server:
+<a href="https://vercel.com/new/clone?demo-title=JAMStack%20Starter&demo-description=Starter%20template%20built%20with%20Next.js%2013%20and%20Sanity%20CMS%20v3%20&%20%20Tailwind%20CSS.&demo-url=https://jamstack-starter-sanity.vercel.app/&demo-image=https://user-images.githubusercontent.com/1884712/209567303-4ed1ec44-5c37-4f33-a6c0-410187186cde.png&project-name=Jamstack%20Starter&repository-name=jamstack-website&repository-url=https://github.com/surjithctly/jamstack-starter&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx">
+<img width="259" alt="Deploy to Vercel & Sanity" src="https://user-images.githubusercontent.com/1884712/169833532-1007b9aa-1456-4386-9526-7b5b46b094ed.png">
+</a>
 
-```bash
-npm run dev
-# or
+## Live Demo
+
+**[See Live Demo →](https://jamstack-starter-sanity.vercel.app/)**
+
+# Installation
+
+## Step 1: Clone & Deploy
+
+<a href="https://vercel.com/new/clone?demo-title=JAMStack%20Starter&demo-description=Starter%20template%20built%20with%20Next.js%2013%20and%20Sanity%20CMS%20v3%20&%20%20Tailwind%20CSS.&demo-url=https://jamstack-starter-sanity.vercel.app/&demo-image=https://user-images.githubusercontent.com/1884712/209567303-4ed1ec44-5c37-4f33-a6c0-410187186cde.png&project-name=Jamstack%20Starter&repository-name=jamstack-website&repository-url=https://github.com/surjithctly/jamstack-starter&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx">
+<img width="259" alt="Deploy to Vercel & Sanity" src="https://user-images.githubusercontent.com/1884712/169833532-1007b9aa-1456-4386-9526-7b5b46b094ed.png">
+</a>
+
+Click the above button for one-click clone & deploy for this template. It is the easist way to clone the repo, configure sanity and deploying to vercel. Click the button above and just follow the steps. It will help you to configure:
+
+- Create new Repository in Github
+- Signup/Login to Sanity CMS (if not already)
+- Create a Sanity Project
+- Install Sanity Integration in Vercel
+- Add required CORS & API settings in the project
+- Add required `.env` variables
+- Deploy Sanity Studio - Content Manager
+- Deploy to Vercel
+
+## Step 2: Add Content
+
+Once you have a published site, visit `https://your-published-url.com/studio` URL and add your content before visiting your website. Or you will see a blank / broken website. To import demo data, follow the below steps inside.
+
+## Step 3: Import Demo Data
+
+To look like what you have seen in the demo, with all the content and images, follow the below steps:
+
+- Clone the github repo you have created
+- run `npm sanity import` command from terminal
+
+## Local Development
+
+Again, we recommend you to use the one-click deploy first which will create a github repo. You can then clone the github repo to your local system and change following `.env` variables.
+
+### Run Next.js frontend
+
+You can use the normal Next.js method to run the frontend. Just run the following command and a live server will open on `http://localhost:3000`
+
+```
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Run Sanity Studio CMS
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. Install Sanity CLI globally (if not already)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```
+npm install -g @sanity/cli
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+2. Run
 
-## Learn More
+To run sanity studio server, run the following command in your terminal. It will open a live server on `http://localhost:3333`
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+npm run sanity
+# or
+pnpm sanity
+```

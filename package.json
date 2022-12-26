@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "sanity": "sanity dev",
+    "import": "sanity dataset import lib/sanity/data/production.tar.gz production",
+    "export": "sanity dataset export production lib/sanity/data/production.tar.gz",
     "lint": "next lint"
   },
   "dependencies": {
