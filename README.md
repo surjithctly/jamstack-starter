@@ -8,15 +8,13 @@ JAMStack Starter is a starter template built with Next.js, Tailwind CSS & Sanity
 
 ## Live Demo
 
-**[See Live Demo →](https://jamstack-starter-sanity.vercel.app/)**
+**https://jamstack-starter-sanity.vercel.app/**
 
 # Installation
 
 ## Step 1: Clone & Deploy
 
-<a href="https://vercel.com/new/clone?demo-title=JAMStack%20Starter&demo-description=Starter%20template%20built%20with%20Next.js%2013%20and%20Sanity%20CMS%20v3%20&%20%20Tailwind%20CSS.&demo-url=https://jamstack-starter-sanity.vercel.app/&demo-image=https://user-images.githubusercontent.com/1884712/209567303-4ed1ec44-5c37-4f33-a6c0-410187186cde.png&project-name=Jamstack%20Starter&repository-name=jamstack-website&repository-url=https://github.com/surjithctly/jamstack-starter&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx">
-<img width="259" alt="Deploy to Vercel" src="https://camo.githubusercontent.com/5e471e99e8e022cf454693e38ec843036ec6301e27ee1e1fa10325b1cb720584/68747470733a2f2f76657263656c2e636f6d2f627574746f6e">
-</a>
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?demo-title=JAMStack%20Starter&demo-description=Starter%20template%20built%20with%20Next.js%2013%20and%20Sanity%20CMS%20v3%20&%20%20Tailwind%20CSS.&demo-url=https://jamstack-starter-sanity.vercel.app/&demo-image=https://user-images.githubusercontent.com/1884712/209567303-4ed1ec44-5c37-4f33-a6c0-410187186cde.png&project-name=Jamstack%20Starter&repository-name=jamstack-website&repository-url=https://github.com/surjithctly/jamstack-starter&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx)
 
 Click the above button to deploy for this template on vercel. It is the easist way to clone the repo, configure sanity and deploy to vercel.
 
@@ -122,7 +120,8 @@ pnpm create sanity@latest
 It will ask you to Login/Signup with Sanity, Create a Project or Choose an existing one.
 
 > **Warning**
-> DO NOT INSTALL THE DEPENDENCIES OR ADD PROJECT FILES. Exit the command after the project is created.
+>
+> **DO NOT INSTALL THE DEPENDENCIES OR ADD PROJECT FILES.** Exit the command after the project is created.
 
 Once you have the project head over to https://sanity.io/manage to copy the Project ID and Dataset name.
 
