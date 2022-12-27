@@ -121,7 +121,8 @@ It will ask you to Login/Signup with Sanity, Create a Project or Choose an exist
 
 > **Warning**
 >
-> **DO NOT INSTALL THE DEPENDENCIES OR ADD PROJECT FILES.** Exit the command after the project is created.
+> **DO NOT INSTALL THE DEPENDENCIES OR ADD PROJECT FILES.**
+> Exit the command after the project is created.
 
 Once you have the project head over to https://sanity.io/manage to copy the Project ID and Dataset name.
 
