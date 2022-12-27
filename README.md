@@ -146,3 +146,7 @@ pnpm dev
 
 Now your project should be up and the Next.js frontend will be running on http://localhost:3000.
 Sanity Studio can be accessed using http://localhost:3000/studio.
+
+# Help & Support
+
+If you have trouble setting up this starter template, join on our [Discord Community](https://web3templates.com/discord) to ask for help.
