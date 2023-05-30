@@ -1,6 +1,11 @@
 {
-  "extends": ["next/core-web-vitals", "@sanity/eslint-config-studio"],
+  "extends": ["next", "@sanity/react", "sanity/typescript"],
   "rules": {
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "no-unused-vars": "warn",
+    "no-console": "warn"
+  },
+  "globals": {
+    "JSX": true
   }
 }

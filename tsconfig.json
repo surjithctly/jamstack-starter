@@ -25,18 +25,9 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/lib/*": [
-        "./lib/*"
-      ],
-      "@/utils/*": [
-        "./utils/*"
-      ],
-      "@/components/*": [
-        "./components/*"
-      ],
-      "@/styles/*": [
-        "./styles/*"
-      ],
+      "@/*": [
+        "./*"
+      ]
     }
   },
   "include": [

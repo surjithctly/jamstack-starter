@@ -1,3 +1,7 @@
+/* eslint-disable no-undef */
+
+import "./reset.css";
+
 export default function RootLayout({
   children,
 }: {
@@ -5,7 +9,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head />
       <body>{children}</body>
     </html>
   );

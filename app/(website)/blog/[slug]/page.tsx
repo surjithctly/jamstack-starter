@@ -1,4 +1,4 @@
-import PostPage from "@/components/pages/post";
+import PostPage from "./post";
 import { getAllPostsSlugs, getPostBySlug } from "@/lib/sanity/client";
 
 export async function generateStaticParams() {

@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -6,7 +8,13 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        // to change, update font in _document.js
+        sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
+        stock: [defaultTheme.fontFamily.sans],
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };
