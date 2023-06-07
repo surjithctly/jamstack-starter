@@ -1,5 +1,5 @@
 import HomePage from "./home";
-import { getAllPosts } from "@/lib/sanity/client";
+import { getAllPosts } from "@/sanity/client";
 
 export default async function IndexRoute() {
   const posts = await getAllPosts();

@@ -1,5 +1,5 @@
 import PostList from "../../components/parts/postlist";
-import type { Post } from "@/lib/sanity/groq";
+import type { Post } from "@/sanity/groq";
 import Container from "@/components/parts/container";
 
 export default function HomePage({ posts }: { posts: Post[] }) {
