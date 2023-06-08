@@ -39,3 +39,9 @@ export const singlePost = groq`
 export const postpaths = groq`
 *[_type == "post" && defined(slug.current)][].slug.current
 `;
+
+export const settingsquery = groq`
+*[_type == "settings"][0] {
+  ...
+}
+`;

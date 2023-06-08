@@ -2,20 +2,23 @@ import PostList from "../../components/parts/postlist";
 import type { Post } from "@/sanity/groq";
 import Container from "@/components/parts/container";
 
-export default function HomePage({ posts }: { posts: Post[] }) {
+export default function HomePage({
+  posts,
+  settings,
+}: {
+  posts: Post[];
+  settings: Record<string, any>;
+}) {
   // console.log(posts);
   return (
     <Container>
       <h1 className="text-5xl font-bold leading-tight tracking-tighter text-center md:text-6xl">
-        JAMStack Starter
+        {settings?.siteName || "Local Title"}
       </h1>
       <div className="max-w-2xl mx-auto mt-4 text-lg text-center">
-        <p>
-          JAMStack Starter is a simple starter template built with Next.js 13
-          and Sanity CMS v3. This starter is styled with Tailwind CSS.{" "}
-        </p>
+        <p>{settings?.siteDesc || "Some fallback description"}</p>
         <a
-          href="https://github.com/surjithctly/jamstack-starter"
+          href={settings?.githubUrl || "#"}
           target="_blank"
           className="inline-block px-3 py-2 mt-4 text-white bg-blue-500 rounded-md"
           rel="noopener noreferrer">

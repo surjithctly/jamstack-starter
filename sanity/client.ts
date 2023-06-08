@@ -1,5 +1,11 @@
 import { apiVersion, dataset, projectId, useCdn } from "./config";
-import { type Post, postquery, singlePost, postpaths } from "./groq";
+import {
+  type Post,
+  postquery,
+  singlePost,
+  postpaths,
+  settingsquery,
+} from "./groq";
 import { createClient } from "next-sanity";
 
 if (!projectId) {
@@ -15,22 +21,14 @@ const client = projectId
   ? createClient({ projectId, dataset, apiVersion, useCdn })
   : null;
 
-// export async function getSettings(): Promise<Settings> {
-//     if (client) {
-//         return (await client.fetch(settingsQuery)) || {}
-//     }
-//     return {}
-// }
+export async function getSettings(): Promise<object> {
+  if (client) {
+    return (await client.fetch(settingsquery)) || {};
+  }
+  return {};
+}
 
 export async function getAllPosts(): Promise<Post[]> {
-  console.log(
-    "refetching data..",
-    Date.now(),
-    useCdn,
-    "log fetch",
-    await client.fetch(postquery)
-  );
-
   if (client) {
     return (await client.fetch(postquery)) || [];
   }
