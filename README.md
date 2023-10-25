@@ -130,6 +130,7 @@ Change `.env.local.example` placed in the root folder and rename it to `.env.loc
 
 ```bash
 NEXT_PUBLIC_SANITY_PROJECT_ID=
+SANITY_STUDIO_PROJECT_ID=
 NEXT_PUBLIC_SANITY_DATASET=production
 SANITY_REVALIDATE_SECRET=
 ```
